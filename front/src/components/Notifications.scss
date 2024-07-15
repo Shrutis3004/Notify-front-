@@ -1,0 +1,181 @@
+.notifications-body {
+  background-image: url("work.jpg");
+  background-size: 100% 100%;
+  padding: 20px;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.notifications-heading {
+  margin-bottom: 20px;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: "Pacifico", cursive; /* Changed font to Pacifico, a cursive font */
+  color: #ff0707; /* Changed color to a bright orange */
+  position: relative;
+  animation: text-fade-in 2s ease-in-out;
+  z-index: 1; /* Added z-index to make the heading visible above the lightning effect */
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff; /* Added text shadow to make the heading more visible */
+  background: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Added background to make the heading more visible */
+  padding: 10px;
+  padding-left: 20px; /* Added padding to make the heading more visible */
+  border-radius: 5px; /* Added border radius to make the heading more visible */
+}
+
+.notifications-heading::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 290px;
+  width: 120%;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: all 0.4s;
+  animation: lightning 2s infinite;
+  z-index: -1; /* Added z-index to make the lightning effect behind the heading */
+}
+
+.notifications-heading:hover::before {
+  left: 300px;
+  top: -20px;
+}
+
+.notification-section {
+  margin-bottom: 30px;
+}
+
+.notification-section h2 {
+  position: relative;
+  animation: text-fade-in 2s ease-in-out;
+  font-family: "Pacifico", cursive; /* Changed font to Pacifico, a cursive font */
+  color: #ee0202; /* Changed color to a bright orange */
+  z-index: 1; /* Added z-index to make the heading visible above the lightning effect */
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff; /* Added text shadow to make the heading more visible */
+
+  padding: 10px; /* Added padding to make the heading more visible */
+  border-radius: 5px; /* Added border radius to make the heading more visible */
+}
+
+.notification-section h2::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 300px;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: all 0.4s;
+  animation: lightning 2s infinite;
+  z-index: -1; /* Added z-index to make the lightning effect behind the heading */
+}
+
+.notification-section h2:hover::before {
+  left: 300px;
+  top: -20px;
+}
+
+.notification-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.notification-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: all 0.4s;
+  animation: lightning 2s infinite;
+}
+
+.notification-container:hover::before {
+  left: -70%;
+  top: -70%;
+}
+
+.notification-message {
+  flex: 1;
+  color: #9ddf0e;
+}
+
+.notification-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: 46%;
+}
+
+.notification-button {
+  background-color: #fc1134;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  animation: buttonFadeIn 1s ease-in-out;
+  transition: background-color 0.3s;
+}
+
+.notification-button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes buttonFadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes lightning {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,222 @@
+$lightning-color: #fff700;
+$animation-duration: 5s;
+
+.container {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: url("./futuristic-view-high-tech-earth-planet.jpg") left no-repeat,
+    url("./futuristic-new-year-s-eve-celebration.jpg") right no-repeat;
+  background-repeat: no-repeat, no-repeat;
+  background-position: left center, right center;
+  background-size: 70vw, 80vw;
+  background-position-x: -200px, 600px;
+  overflow-x: hidden; /* Added overflow-x: hidden */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 50px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 20px; /* Reduced from 50px to 20px */
+}
+
+.log {
+  border-radius: 50%;
+}
+
+.button-container {
+  display: flex;
+  margin-right: 50px;
+}
+
+.nav-button {
+  text-decoration: none;
+  padding: 15px 10px;
+  color: white;
+  background-color: #007bff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-right: 20px;
+
+  &:hover {
+    color: #007bff;
+    background-color: #fff;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0)
+    );
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  &:before {
+    top: -75%;
+    left: -75%;
+  }
+
+  &:after {
+    bottom: -75%;
+    right: -75%;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    top: -10%;
+    left: -10%;
+    bottom: -10%;
+    right: -10%;
+  }
+
+  &.nav-lightning {
+    animation: lightning 2s infinite;
+  }
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  position: relative;
+  margin-top: 200px; /* Adjusted to make space for header */
+}
+
+.section-item {
+  text-align: center;
+  position: relative;
+  margin-left: 15%;
+}
+
+.section-item1 {
+  text-align: center;
+  position: relative;
+  margin-left: 25%;
+}
+
+.section-item2 {
+  text-align: center;
+  position: relative;
+  margin-left: 35%;
+}
+
+.section-item img,
+.section-item1 img,
+.section-item2 img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  animation: rotate $animation-duration infinite linear;
+}
+
+.section-item p,
+.section-item1 p,
+.section-item2 p {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #fff;
+  padding: 5px 5px;
+  margin-top: 18px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.section-item:hover img {
+  box-shadow: 0 0 15px $lightning-color, 0 0 25px $lightning-color,
+    0 0 35px $lightning-color, 0 0 45px $lightning-color;
+  transition: box-shadow $animation-duration;
+}
+
+.section-item:hover p {
+  color: $lightning-color;
+  transition: color $animation-duration;
+}
+
+@keyframes lightning {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $lightning-color,
+      0 0 20px $lightning-color, 0 0 25px $lightning-color,
+      0 0 30px $lightning-color, 0 0 35px $lightning-color;
+  }
+  50% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $lightning-color,
+      0 0 20px $lightning-color, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #fff;
+  }
+}
+
+.lightning-effect {
+  animation: lightning $animation-duration infinite alternate;
+}
+
+@media (max-width: 768px) {
+  .container {
+    background-position-x: 0, -100px;
+    background-size: 0, cover;
+  }
+
+  .section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header {
+    flex-direction: column; /* Changed from row to column */
+    align-items: center;
+  }
+  .log {
+    display: none;
+  }
+  .nav-button {
+    padding: 5px 10px; /* Reduced padding */
+    font-size: 14px;
+    margin-left: 60px; /* Reduced font size */
+    margin-right: 20px;
+  }
+  .section-item {
+    margin-top: 80px; /* Move item 1 upwards on mobile devices */
+  }
+  .section-item1 {
+    margin-top: 120px; /* Add gap between item 1 and item 2 on mobile devices */
+  }
+  .section-item2 {
+    margin-top: 100px; /* Add gap between item 2 and item 3 on mobile devices */
+  }
+
+  .lightning-effect {
+    animation: lightning $animation-duration infinite alternate;
+    background-color: #dc3167;
+  }
+}

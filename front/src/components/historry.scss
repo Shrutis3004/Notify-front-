@@ -1,0 +1,170 @@
+.history-body {
+  background-image: url("./ima.jpg");
+  background-size: 100% 100%;
+  padding: 20px;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.request-container {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s ease-in-out, borderPulse 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
+  border: 1px solid #ccc;
+  position: relative; /* Ensure relative positioning for lightning effect */
+}
+
+.request-container:hover {
+  transform: translateY(-5px);
+}
+
+.request-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent; /* Initial transparent border */
+  border-radius: 8px;
+  animation: lightningBorder 2s infinite linear alternate,
+    glow 1s infinite ease-in-out;
+}
+
+@keyframes lightningBorder {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes borderPulse {
+  0% {
+    border-color: #ccc;
+  }
+  100% {
+    border-color: #aaa;
+  }
+}
+.his {
+  margin-left: 43%;
+  font-size: larger;
+  font-style: italic;
+}
+.head {
+  margin-left: 40%;
+}
+@media (max-width: 768px) {
+  .head {
+    margin-left: 20%;
+  }
+  .his {
+    margin-left: 25%;
+  }
+}
+.request-container h1 {
+  font-size: 24px;
+  color: #f80d0d;
+  margin-bottom: 10px;
+
+  animation: lightningEffect 0.3s infinite alternate;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add text shadow for a glowing effect */
+}
+
+.request-container p {
+  font-size: 18px;
+  color: #0dcfe4;
+  animation: lightningEffect 0.3s infinite alternate;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add text shadow for a glowing effect */
+}
+
+.request-container img {
+  max-width: 100%;
+  margin-top: 10px;
+  animation: pulse 2s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.request-container button {
+  background-color: #d00a60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: lightningEffect 0.3s infinite alternate;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow for a 3D effect */
+}
+
+.request-container button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Increase the box shadow on hover */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.request-container img {
+  max-width: 100%;
+  margin-top: 10px;
+  animation: pulse 2s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lightningEffect {
+  from {
+    filter: brightness(100%);
+  }
+  to {
+    filter: brightness(150%);
+  }
+}

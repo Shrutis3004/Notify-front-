@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("./home.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.nav-navigation {
+  position: absolute;
+  bottom: 45%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 15%;
+    padding: 0;
+    margin-right: 3%;
+  }
+}
+
+.nav-navigation li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-navigation a {
+  text-decoration: none;
+  padding: 15px 30px;
+  color: white;
+  background-color: #007bff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:hover {
+    color: #007bff;
+    background-color: #fff;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0)
+    );
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  &:before {
+    top: -75%;
+    left: -75%;
+  }
+
+  &:after {
+    bottom: -75%;
+    right: -75%;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    top: -10%;
+    left: -10%;
+    bottom: -10%;
+    right: -10%;
+  }
+
+  &.nav-lightning {
+    animation: lightning 2s infinite;
+  }
+}
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 55px; // adjust padding to match the button padding
+
+  .logo {
+    position: absolute;
+    top: -150%;
+    left: 17%;
+    width: 450px; // adjust the width to make the logo big
+    height: 450px; // adjust the height to make the logo big
+    object-fit: cover;
+    border-radius: 50%; // match the button border-radius
+    z-index: -1; // make sure the logo is behind the buttons
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-button {
+    z-index: 1; // make sure the buttons are on top of the logo
+    margin: 0 75px;
+    margin-top: 20px; // add some margin between the buttons
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.1
+    ); // add some transparency to the buttons
+    color: #fff; // change the text color to white
+    border: none; // remove the border
+  }
+}
+@keyframes lightning {
+  0%,
+  100% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #007bff, 0 0 20px #007bff,
+      0 0 40px #007bff, 0 0 80px #007bff, 0 0 120px #007bff;
+  }
+  50% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #007bff, 0 0 20px #fff, 0 0 40px #fff,
+      0 0 80px #fff, 0 0 120px #fff;
+  }
+}

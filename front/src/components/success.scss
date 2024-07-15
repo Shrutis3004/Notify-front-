@@ -1,0 +1,42 @@
+.success-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./succ1.jpg");
+  text-align: center;
+  background-size: cover;
+}
+
+.success-text {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ff0b0b;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; /* add a glowing effect */
+  text-align: center;
+}
+.button-container {
+  margin-left: 20px;
+}
+
+.home-button {
+  background-color: #f0590d; /* green background color */
+  color: #ffffff; /* white text color */
+  padding: 15px 40px; /* add some padding to the button */
+  border: none;
+  border-radius: 5px; /* add some border radius to the button */
+  cursor: pointer; /* change the cursor to a pointer when hovering over the button */
+}
+
+.home-button:hover {
+  background-color: #3e8e41; /* change the background color on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add some lighting effect on hover */
+}
+@media (max-width: 768px) {
+  .success-container {
+    background-position: -300px;
+  }
+  .home-button {
+    padding: 10px 10px;
+  }
+}
